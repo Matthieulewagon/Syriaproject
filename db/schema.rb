@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129113800) do
+ActiveRecord::Schema.define(version: 20161129113925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20161129113800) do
     t.string   "urgency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "diagnoses", force: :cascade do |t|
+    t.datetime "devlivery_date"
+    t.string   "status"
+    t.string   "description"
+    t.integer  "request_id"
+    t.integer  "pharmacy_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["pharmacy_id"], name: "index_diagnoses_on_pharmacy_id", using: :btree
+    t.index ["request_id"], name: "index_diagnoses_on_request_id", using: :btree
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -84,6 +96,8 @@ ActiveRecord::Schema.define(version: 20161129113800) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "diagnoses", "pharmacies"
+  add_foreign_key "diagnoses", "requests"
   add_foreign_key "doctors", "users"
   add_foreign_key "patients", "users"
   add_foreign_key "pharmacies", "users"
