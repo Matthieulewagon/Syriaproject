@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :users, only: [:index, :show, :edit, :update] do
 
     resources :requests, only: [:new, :create] do
@@ -11,13 +12,13 @@ Rails.application.routes.draw do
 
 
   resource :doctor_dashboard, only: [:show] do
+    resources :pharmacies
 
-  resources :requests, only: [] do
-    member do
+    resources :requests, only: [] do
+      member do
         get 'accept'
         get 'decline'
       end
-      resources :pharmacies
     end
   end
 
