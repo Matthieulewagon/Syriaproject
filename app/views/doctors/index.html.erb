@@ -12,9 +12,12 @@
   <tbody>
     <% @doctors.each do |doctor| %>
       <tr>
-        <td><%= doctor.first_name %></td>
+        <td><%= link_to "#{doctor.first_name}", doctor_path(doctor) %></td>
+        <td><%= doctor.last_name %></td>
+        <td><%= doctor.address %></td>
 
       </tr>
     <% end %>
   </tbody>
 </table>
+

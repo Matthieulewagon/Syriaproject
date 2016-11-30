@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'doctors/index'
+  get 'pharmacies/index'
+
+  resources :doctors
 
   devise_for :users
   root to: 'pages#home'
