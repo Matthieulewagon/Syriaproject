@@ -1,0 +1,20 @@
+<h1>Doctors#index</h1>
+<p>Find me in app/views/doctors/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.first_name %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
