@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20161129113925) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.string   "urgency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,28 +33,6 @@ ActiveRecord::Schema.define(version: 20161129113925) do
     t.index ["request_id"], name: "index_diagnoses_on_request_id", using: :btree
   end
 
-  create_table "doctors", force: :cascade do |t|
-    t.string   "phone_number"
-    t.string   "skype_username"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["user_id"], name: "index_doctors_on_user_id", using: :btree
-  end
-
-  create_table "patients", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_patients_on_user_id", using: :btree
-  end
-
   create_table "pharmacies", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -69,6 +46,7 @@ ActiveRecord::Schema.define(version: 20161129113925) do
   create_table "requests", force: :cascade do |t|
     t.string   "description"
     t.string   "status"
+    t.string   "urgency"
     t.integer  "patient_id"
     t.integer  "doctor_id"
     t.integer  "category_id"
@@ -90,6 +68,14 @@ ActiveRecord::Schema.define(version: 20161129113925) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "skype_username"
+    t.string   "role"
+    t.string   "status"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -98,10 +84,6 @@ ActiveRecord::Schema.define(version: 20161129113925) do
 
   add_foreign_key "diagnoses", "pharmacies"
   add_foreign_key "diagnoses", "requests"
-  add_foreign_key "doctors", "users"
-  add_foreign_key "patients", "users"
   add_foreign_key "pharmacies", "users"
   add_foreign_key "requests", "categories"
-  add_foreign_key "requests", "doctors"
-  add_foreign_key "requests", "patients"
 end
