@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @users.each do |doctor| %>
+    <% @doctors.each do |doctor| %>
       <tr>
         <td><%= link_to "#{doctor.username}", user_path(doctor) %></td>
         <td><%= doctor.last_name %></td>
