@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+    devise_for :users
+  root to: 'pages#home'
+
 
   resources :users, only: [:index, :show, :edit, :update] do
 
@@ -11,18 +14,17 @@ Rails.application.routes.draw do
 
 
   resource :doctor_dashboard, only: [:show] do
+    resources :pharmacies
 
-  resources :requests, only: [] do
-    member do
+    resources :requests, only: [] do
+      member do
         get 'accept'
         get 'decline'
       end
-      resources :pharmacies
     end
   end
 
-  devise_for :users
-  root to: 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # ressources :doctors
 end
