@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :requests
   has_many :pharmacies
-  validates :username, presence: true
-  validates :last_name, presence: true
-  validates :first_name, presence: true
+  validates :username, presence: true, on: :update
+  validates :last_name, presence: true, on: :update
+  validates :first_name, presence: true, on: :update
   validates :address, presence: true, if: Proc.new { |user| user.role == 'doctor'}
 
 
