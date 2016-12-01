@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
 
 
-
   resource :doctor_dashboard, only: [:show] do
     resources :pharmacies
 
