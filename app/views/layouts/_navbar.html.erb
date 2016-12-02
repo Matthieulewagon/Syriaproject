@@ -14,29 +14,29 @@
   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 </ul>
 
-  <nav class="teal lighten-2 z-depth-2">
-    <div class="container">
-      <div class="nav-wrapper">
-      <%= link_to 'Title', root_path %>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">button</a></li>
-          <% if !user_signed_in? %>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-          <% else %>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.first_name %><i class="material-icons right">list</i></a></li>
-          <% end %>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="#">Courses</a></li>
-          <% if !user_signed_in? %>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-          <% else %>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><%= current_user.first_name %><i class="material-icons right">list</i></a></li>
-          <% end %>
-        </ul>
+<nav class="teal lighten-2 z-depth-2">
+  <div class="container">
+    <div class="nav-wrapper">
+    <%= link_to 'Title', root_path %>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">button</a></li>
+        <% if !user_signed_in? %>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% else %>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.username %><i class="material-icons right">list</i></a></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Courses</a></li>
+        <% if !user_signed_in? %>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% else %>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><%= current_user.username %><i class="material-icons right">list</i></a></li>
+        <% end %>
+      </ul>
       </div>
     </div>
   </nav>
