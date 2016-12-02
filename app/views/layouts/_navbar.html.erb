@@ -1,25 +1,19 @@
 <ul id="dropdown1" class="dropdown-content">
-  <li><%= link_to 'My profile', user_path(current_user) if user_signed_in?
-%></li>
-  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+  <li><%= link_to 'My profile', edit_user_registration_path %></li>
   <li><a href="#!">button</a></li>
   <li class="divider"></li>
   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 </ul>
-
 
 <ul id="dropdown2" class="dropdown-content">
-  <li><%= link_to 'My profile', user_path(current_user) if user_signed_in?
- %></li>
-  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+  <li><%= link_to 'My profile', edit_user_registration_path %></li>
   <li><a href="#!">button</a></li>
   <li class="divider"></li>
   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 </ul>
 
-
 <header>
-  <nav class="brown lighten-4 z-depth-2">
+  <nav class="teal lighten-2 z-depth-2">
     <div class="container">
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo">title</a>
