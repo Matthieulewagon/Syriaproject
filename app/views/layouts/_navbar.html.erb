@@ -1,5 +1,7 @@
 <ul id="dropdown1" class="dropdown-content">
-  <li><%= link_to 'My profile', edit_user_registration_path %></li>
+  <% if user_signed_in? %>
+  <li><%= link_to 'My profile', user_path(current_user) %></li>
+  <% end %>
   <li><a href="#!">button</a></li>
   <li class="divider"></li>
   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
@@ -15,7 +17,7 @@
   <nav class="teal lighten-2 z-depth-2">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">title</a>
+      <%= link_to 'Title', root_path %>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#">button</a></li>
