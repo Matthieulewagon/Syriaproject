@@ -6,7 +6,7 @@
 h1 {
   margin-top: 0px;
   color: white;
-  margin-bottom: 300px;
+  margin-bottom: 120px;
 }
 
 h1, h2, h3 {
@@ -36,3 +36,17 @@ h2 {
   url('background1.jpg');
   background-size: cover; */
 }
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 80%;
+}
+
