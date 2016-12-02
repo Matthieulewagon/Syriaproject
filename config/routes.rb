@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   root to: 'pages#home'
+
+devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
 
   resources :users, only: [:index, :show, :edit, :update] do
@@ -11,8 +13,6 @@ Rails.application.routes.draw do
       resources :dignoses, only: [:new, :create, :destroy]
     end
   end
-
-
   resource :doctor_dashboard, only: [:show] do
     resources :pharmacies
 
