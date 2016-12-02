@@ -6,9 +6,11 @@ class User < ApplicationRecord
           omniauth_providers: [:facebook]
   has_many :requests
   has_many :pharmacies
+
   # validates :username, presence: true
   # validates :last_name, presence: true
-#  validates :first_name, presence: true
+  # validates :first_name, presence: true
+
   validates :address, presence: true, if: Proc.new { |user| user.role == 'doctor'}
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
