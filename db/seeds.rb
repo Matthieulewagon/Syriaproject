@@ -36,7 +36,7 @@ end
                    address: Faker::Address.street_address,
                    user_id: User.all.sample.id)
 end
-
+=begin
   User.create!(phone_number: ,
                 skype_username: ,
                 first_name: ,
@@ -125,3 +125,4 @@ end
                 username: ,
                 role: 'doctor'
 
+=end
