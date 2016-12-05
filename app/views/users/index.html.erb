@@ -1,5 +1,3 @@
-<h1>Users#index</h1>
-
 <table>
   <thead>
     <tr>
@@ -8,14 +6,18 @@
     </tr>
   </thead>
 
+
   <tbody>
     <% @doctors.each do |doctor| %>
       <tr>
         <td><%= link_to "#{doctor.username}", user_path(doctor) %></td>
         <td><%= doctor.last_name %></td>
         <td><%= doctor.address %></td>
-
+        <td><%= link_to "Create request", new_user_request_path(doctor) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+

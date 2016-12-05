@@ -4,9 +4,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :role, required: true, placeholder: "doctor or patient"%>
+    <%= f.input :username, required: true%>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+    <%= f.input :first_name%>
+    <%= f.input :last_name%>
+    <%= f.input :address%>
+    <%= f.input :phone_number%>
+    <%= f.input :skype_username%>
+
+
+
+
+
   </div>
 
   <div class="form-actions">

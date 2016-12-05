@@ -17,7 +17,12 @@
 <nav class="teal lighten-2 z-depth-2">
   <div class="container">
     <div class="nav-wrapper">
-    <%= link_to 'Title', root_path %>
+
+    <%= link_to root_path do %>
+    <%= image_tag('Logo.gif', :size => '35x35') %>
+    PinAdoctor
+    <% end %>
+
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">button</a></li>
