@@ -36,3 +36,92 @@ end
                    address: Faker::Address.street_address,
                    user_id: User.all.sample.id)
 end
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: .first_name,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: .first_name,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: ,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: ,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: ,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: ,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: ,
+                role: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: ,
+                role: 'doctor'
+
