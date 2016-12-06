@@ -1,5 +1,5 @@
 class Request < ApplicationRecord
-  belongs_to :user
+  #belongs_to :user
   belongs_to :category
   validates :description, presence: true
   # validates :status, presence: true

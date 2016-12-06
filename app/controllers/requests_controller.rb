@@ -1,13 +1,16 @@
 class RequestsController < ApplicationController
   def new
+    @doctor = User.find(params[:user_id])
     @request = Request.new
   end
 
   def create
-     # @request = Request.new(request_params)
-     # @request.update_attributes(patient_id: params[:user_id])
-     @request = current_user.requests.create(request_params)
-     @request.save
+      @request = Request.new()
+      @request.update_attributes(doctor_id: params[:user_id], patient_id: current_user.id, description: params[:request][:description], category_id: 1)
+      #@request = current_user.requests.build(request_params)
+      @request.update_attributes(doctor_id: params[:user_id])
+     @request.save!
+
      redirect_to users_path
   end
 
