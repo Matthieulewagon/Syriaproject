@@ -7,9 +7,15 @@ class User < ApplicationRecord
   has_many :requests
   has_many :pharmacies
 
-
-
+  validates :username, presence: true
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :skype_username, presence: true
   validates :address, presence: true, if: Proc.new { |user| user.role == 'doctor'}
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -30,8 +36,5 @@ class User < ApplicationRecord
     return user
   end
 
-  validates :username, presence: true
-  validates :last_name, presence: true
-  validates :first_name, presence: true
-  validates :skype_username, presence: true
+
 end
