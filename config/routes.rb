@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'requests/create'
-
-  get 'requests/new'
-
   root to: 'pages#home'
 
 devise_for :users,
