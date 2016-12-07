@@ -7,35 +7,85 @@
 #                 username: Faker::Name.first_name,
                 # )
 
-# Seed doctors
-10.times do |n|
-  # user = User.create!(email: Faker::Internet.email,
-  #               password: "foobar",
-  #               password_confirmation: "foobar")
+# # Seed doctors
+# 10.times do |n|
+#   # user = User.create!(email: Faker::Internet.email,
+#   #               password: "foobar",
+#   #               password_confirmation: "foobar")
 
+#   User.create!(phone_number: Faker::PhoneNumber.cell_phone,
+#                 skype_username: Faker::Hipster.word,
+#                 first_name: Faker::Name.first_name,
+#                 last_name: Faker::Name.last_name,
+#                 address: Faker::Address.street_address,
+#                 email: Faker::Internet.email,
+#                 password: "foobar",
+#                 password_confirmation: "foobar",
+#                 username: Faker::Name.first_name,
+#                 role: 'doctor')
+# end
+
+  User.where(role: 'doctor').destroy_all
   User.create!(phone_number: Faker::PhoneNumber.cell_phone,
                 skype_username: Faker::Hipster.word,
                 first_name: Faker::Name.first_name,
                 last_name: Faker::Name.last_name,
-                address: Faker::Address.street_address,
+                address: 'Hawash, Syria',
                 email: Faker::Internet.email,
                 password: "foobar",
                 password_confirmation: "foobar",
                 username: Faker::Name.first_name,
                 role: 'doctor')
-end
+
+  User.create!(phone_number: Faker::PhoneNumber.cell_phone,
+                skype_username: Faker::Hipster.word,
+                first_name: Faker::Name.first_name,
+                last_name: Faker::Name.last_name,
+                address: 'Palmyra, Syria',
+                email: Faker::Internet.email,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: Faker::Name.first_name,
+                role: 'doctor')
+
+  User.create!(phone_number: Faker::PhoneNumber.cell_phone,
+                skype_username: Faker::Hipster.word,
+                first_name: Faker::Name.first_name,
+                last_name: Faker::Name.last_name,
+                address: 'Homs, Syria',
+                email: Faker::Internet.email,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: Faker::Name.first_name,
+                role: 'doctor')
+
+
+  User.create!(phone_number: Faker::PhoneNumber.cell_phone,
+                skype_username: Faker::Hipster.word,
+                first_name: Faker::Name.first_name,
+                last_name: Faker::Name.last_name,
+                address: 'Talkalakh, Syria',
+                email: Faker::Internet.email,
+                password: "foobar",
+                password_confirmation: "foobar",
+                username: Faker::Name.first_name,
+                role: 'doctor')
+
+
+
+
 
 # Seed pharmacies
-10.times do |n|
-  # user = User.create!(email: Faker::Internet.email,
-  #               password: "foobar",
-  #               password_confirmation: "foobar")
+# 10.times do |n|
+#   # user = User.create!(email: Faker::Internet.email,
+#   #               password: "foobar",
+#   #               password_confirmation: "foobar")
 
-  Pharmacy.create!(name: Faker::Hipster.word,
-                   phone_number: Faker::PhoneNumber.cell_phone,
-                   address: Faker::Address.street_address,
-                   user_id: User.all.sample.id)
-end
+#   Pharmacy.create!(name: Faker::Hipster.word,
+#                    phone_number: Faker::PhoneNumber.cell_phone,
+#                    address: Faker::Address.street_address,
+#                    user_id: User.all.sample.id)
+# end
 =begin
   User.create!(phone_number: ,
                 skype_username: ,
