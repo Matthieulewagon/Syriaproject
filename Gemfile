@@ -25,6 +25,10 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+
 
 gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
