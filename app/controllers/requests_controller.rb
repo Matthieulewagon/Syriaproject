@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
       @request.update_attributes(doctor_id: params[:user_id], patient_id: current_user.id, description: params[:request][:description], category_id: 1)
       #@request = current_user.requests.build(request_params)
       @request.update_attributes(doctor_id: params[:user_id])
-     @request.save!
+     # @request.save!
 
      redirect_to users_path
   end
@@ -19,4 +19,3 @@ class RequestsController < ApplicationController
   end
 
 
-end

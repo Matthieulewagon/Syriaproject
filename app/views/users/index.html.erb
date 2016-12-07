@@ -15,17 +15,17 @@
 
   <div id="map" style="width: 100%; height: 600px;"></div>
 
-  <!-- <tbody> -->
- <!--    <% @doctors.each do |doctor| %>
+  <tbody>
+    <% @doctors.each do |doctor| %>
       <tr>
         <td><%= link_to "#{doctor.username}", user_path(doctor) %></td>
         <td><%= doctor.last_name %></td>
         <td><%= doctor.address %></td>
         <td><%= link_to "Create request", new_user_request_path(doctor) %></td>
       </tr>
-    <% end %> -->
-<!--   </tbody>
-</table> -->
+    <% end %>
+  </tbody>
+</table>
 
   <% content_for(:after_js) do %>
 

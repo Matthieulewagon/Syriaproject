@@ -1,18 +1,11 @@
+<% if user_signed_in? %>
 <ul id="dropdown1" class="dropdown-content">
-  <% if user_signed_in? %>
   <li><%= link_to 'My profile', user_path(current_user) %></li>
-  <% end %>
-  <li><a href="#!">button</a></li>
+  <li><a href="#!"><%= current_user.first_name %></a></li>
   <li class="divider"></li>
   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 </ul>
-
-<ul id="dropdown2" class="dropdown-content">
-  <li><%= link_to 'My profile', edit_user_registration_path %></li>
-  <li><a href="#!">button</a></li>
-  <li class="divider"></li>
-  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-</ul>
+<% end %>
 
 <nav class="teal lighten-2 z-depth-2">
   <div class="container">
@@ -24,7 +17,9 @@
 
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">button</a></li>
+        <% if user_signed_in? %>
+          <li><a href="#!"><%= current_user.first_name %></a></li>
+        <% end %>
         <% if !user_signed_in? %>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Login', new_user_session_path %></li>
