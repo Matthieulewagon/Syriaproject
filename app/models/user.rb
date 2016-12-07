@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,  :timeoutable, :omniauthable,
           omniauth_providers: [:facebook]
+
+  mount_uploader :photo, PhotoUploader
+
   has_many :requests
   has_many :pharmacies
 
@@ -29,6 +32,18 @@ class User < ApplicationRecord
 
     return user
   end
+
+  # def active_for_authentication?
+  #   super && approved?
+  # end
+
+  # def inactive_message
+  #   if !approved?
+  #     :not_approved
+  #   else
+  #     super # Use whatever other message
+  #   end
+  # end
 
   validates :username, presence: true
   validates :last_name, presence: true

@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = OrgPerson.find(params[:id])
+
   end
 
   def show

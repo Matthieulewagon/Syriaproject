@@ -18,9 +18,10 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'pundit'
-gem 'paperclip'
-gem 'aws-sdk'
+
+gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
