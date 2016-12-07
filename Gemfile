@@ -20,6 +20,7 @@ gem 'omniauth-facebook'
 gem 'pundit'
 gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
+gem 'coffee-script', '~> 2.4', '>= 2.4.1'
 
 group :development, :test do
   gem 'binding_of_caller'
