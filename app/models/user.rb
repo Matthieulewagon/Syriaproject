@@ -48,5 +48,5 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :last_name, presence: true
   validates :first_name, presence: true
-  validates :skype_username, presence: true
+  # validates :skype_username, presence: true
 end

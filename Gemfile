@@ -21,6 +21,9 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
 
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
