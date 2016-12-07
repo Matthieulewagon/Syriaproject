@@ -1,9 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-<<<<<<< HEAD
   revision: 4f494073c6c0c016ba4902faad65f07ee034bb1a
-=======
-
   specs:
     activeadmin (1.0.0.pre4)
       arbre (~> 1.0, >= 1.0.2)
@@ -127,7 +124,6 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
-
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -138,7 +134,6 @@ GEM
     has_scope (0.7.0)
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
-
     hashie (3.4.6)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -308,13 +303,9 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass
-
-  inherited_resources!
-
   geocoder
   gmaps4rails
-
-
+  inherited_resources!
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
