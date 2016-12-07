@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,  :timeoutable, :omniauthable,
           omniauth_providers: [:facebook]
+
+  mount_uploader :photo, PhotoUploader
+
   has_many :requests
   has_many :pharmacies
 
@@ -35,6 +38,4 @@ class User < ApplicationRecord
 
     return user
   end
-
-
 end
