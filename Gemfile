@@ -18,6 +18,13 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
 gem 'pundit'
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 
 gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
