@@ -4,8 +4,8 @@ class CreateRequests < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :status
       t.string :urgency
-      t.integer :patient_id, foreign_key: true, index:true
-      t.integer :doctor_id, foreign_key: true, index:true
+      t.references :patient
+      t.references :doctor
       t.references :category, foreign_key: true
 
       t.timestamps

@@ -6,9 +6,9 @@ class RequestsController < ApplicationController
 
   def create
       @request = Request.new()
-      @request.update_attributes(doctor_id: params[:user_id], patient_id: current_user.id, description: params[:request][:description], category_id: 1)
-      #@request = current_user.requests.build(request_params)
-      @request.update_attributes(doctor_id: params[:user_id])
+      #@request.update_attributes(doctor_id: params[:user_id], patient_id: current_user.id, description: params[:request][:description], category_id: 1)
+      @request.update_attributes(doctor_id: params[:user_id], description: params[:request][:description], patient_id: current_user.id)
+      #@request.update_attributes(doctor_id: params[:user_id])
      @request.save!
 
      redirect_to users_path

@@ -2,7 +2,7 @@
   <% if user_signed_in? %>
   <li><%= link_to 'My profile', user_path(current_user) %></li>
   <% end %>
-  <li><a href="#!">button</a></li>
+  <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
   <li class="divider"></li>
   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 </ul>
@@ -17,7 +17,7 @@
 
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">button</a></li>
+        <li><a href="#">For Doctors</a></li>
         <% if !user_signed_in? %>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Login', new_user_session_path %></li>
