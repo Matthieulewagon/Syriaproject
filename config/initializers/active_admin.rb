@@ -2,7 +2,9 @@ def authenticate_admin!
   redirect_to new_user_session_path unless current_user && current_user.admin
 end
 
+
 ActiveAdmin.setup do |config|
+
 
   # == Site Title
   #
@@ -59,7 +61,11 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
+<<<<<<< HEAD
   config.authentication_method = :authenticate_user!
+=======
+  config.authentication_method = :authenticate_admin!
+>>>>>>> 9289097781b006195344f1f3f12f115ac41efd84
 
   # == User Authorization
   #
