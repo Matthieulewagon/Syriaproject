@@ -8,7 +8,15 @@ class UsersController < ApplicationController
     @hash = Gmaps4rails.build_markers(@doctors) do |doctor, marker|
       marker.lat doctor.latitude
       marker.lng doctor.longitude
-    end
+      marker.infowindow render_to_string(partial: "/users/info_box", locals: { doctor: doctor })
+      #marker.infowindow docotor.address
+     # marker.picture({
+     #    :url     => "/img/blank.png",
+     #    :width   => 32,
+     #    :height  => 32
+     #    })
+     # marker.json({:title => doctor.first_name})
+  end
   end
 
   def edit
@@ -26,4 +34,5 @@ class UsersController < ApplicationController
 
   def update
   end
+
 end
