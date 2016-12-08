@@ -28,8 +28,6 @@
 
 </table>
 
-  <% content_for(:after_js) do %>
-
   <script type="text/javascript">
     $(document).on('ready', function() {
       var handler = Gmaps.build('Google');
@@ -49,4 +47,3 @@
         });
     });
   </script>
-  <% end %>
