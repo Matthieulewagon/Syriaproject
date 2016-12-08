@@ -1,11 +1,11 @@
-# class AddApprovedToUser < ActiveRecord::Migration[5.0]
-#  def self.up
+class AddApprovedToUser < ActiveRecord::Migration[5.0]
+ def self.up
 #     add_column :users, :approved, :boolean, :default => false, :null => false
 #     add_index  :users, :approved
-#   end
+  end
 
-#   def self.down
+  def self.down
 #     remove_index  :users, :approved
 #     remove_column :users, :approved
-#   end
-# end
+  end
+end
