@@ -7,5 +7,6 @@ class AddApprovedToUser < ActiveRecord::Migration[5.0]
   def self.down
     # remove_index  :users, :approved
     # remove_column :users, :approved
+
   end
 end
