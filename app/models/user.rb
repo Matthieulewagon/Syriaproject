@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  has_many :requests
+  has_many :requests_as_doctor, class_name: 'Request', foreign_key: 'doctor_id'
+  has_many :requests_as_patient, class_name: 'Request', foreign_key: 'patient_id'
   has_many :pharmacies
 
   validates :username, presence: true
@@ -38,19 +39,4 @@ class User < ApplicationRecord
 
     return user
   end
-  # def active_for_authentication?
-  #   super && approved?
-  # end
-
-  # def inactive_message
-  #   if !approved?
-  #     :not_approved
-  #   else
-  #     super # Use whatever other message
-  #   end
-  # end
-
-
-
-
 end
