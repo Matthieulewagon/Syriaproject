@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'doctor_dashboard/index'
-
-  get 'doctor_dashboard/show'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   ActiveAdmin.routes(self)
   root to: 'pages#home'
@@ -19,6 +15,7 @@ devise_for :users,
       resources :dignoses, only: [:new, :create, :destroy]
     end
   end
+  resource :patient_dashboard, only: [:show]
   resource :doctor_dashboard, only: [:show] do
     resources :pharmacies
 

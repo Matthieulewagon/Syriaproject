@@ -1,0 +1,2 @@
+module PatientDashboardsHelper
+end
