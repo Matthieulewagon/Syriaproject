@@ -15,8 +15,8 @@ devise_for :users,
       resources :dignoses, only: [:new, :create, :destroy]
     end
   end
-  resource :patient_dashboard, only: [:show]
-  resource :doctor_dashboard, only: [:show] do
+  resource :patient_dashboard, only: [:show, :destroy]
+  resource :doctor_dashboard, only: [:show, :destroy] do
     resources :pharmacies
 
     resources :requests, only: [] do
