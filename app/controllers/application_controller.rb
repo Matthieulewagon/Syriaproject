@@ -14,7 +14,14 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
-
+  def after_sign_in_path_for(user)
+    if user.role == "doctor"
+      return  doctor_dashboard_url
+    end
+    if user.role == "patient"
+      return root_path
+    end
+  end
   private
 
   def skip_pundit?

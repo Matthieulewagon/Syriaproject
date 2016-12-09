@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
       #@request.update_attributes(doctor_id: params[:user_id])
      @request.save!
 
-     redirect_to users_path
+     redirect_to patient_dashboard_path(current_user)
   end
 
   def request_params
