@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'doctor_dashboard/index'
+
+  get 'doctor_dashboard/show'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   ActiveAdmin.routes(self)
