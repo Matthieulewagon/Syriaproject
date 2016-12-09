@@ -3,9 +3,16 @@
   <div class="banner-content text-center">
 <div style="text-align:center"><link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"><h1>Pin a Doctor</h1></div>
     <!-- <h1>Pin a doctor</h1> -->
+    <% if user_signed_in? %>
   <center>
     <%= link_to  "Search", users_path, class: "btn btn-danger btn-lg" %>
   </center>
+    <% else %>
+    <center>
+    <%= link_to  "Search", new_user_registration_path, class: "btn btn-danger btn-lg" %>
+    </center>
+    <% end %>
+
   </div>
 </div>
 
