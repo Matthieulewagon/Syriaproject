@@ -21,24 +21,7 @@
       <%= image_tag('logo.gif', :size => '35x50') %>PinAdoctor
     <% end %>
 
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <% if !user_signed_in? %>
-          <li><%= link_to 'Sign up', new_user_registration_path %></li>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-        <% else %>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.username %><i class="material-icons right">list</i></a></li>
-        <% end %>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="#">Courses</a></li>
-        <% if !user_signed_in? %>
-          <li><%= link_to 'Sign up', new_user_registration_path %></li>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-        <% else %>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><%= current_user.username %><i class="material-icons right">list</i></a></li>
-        <% end %>
-      </ul>
+
       </div>
     </div>
   </nav>
