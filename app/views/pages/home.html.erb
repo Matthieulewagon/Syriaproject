@@ -1,10 +1,22 @@
 <div class="row jumbo-header">
+<% if !current_user %>
   <div class="col s12 m6 center">
     <%= link_to "I NEED HELP", new_user_registration_path(role: "patient"), class: "btn red accent-1 btn-large" %>
   </div>
   <div class="col s12 m6 center">
     <%= link_to "I'M A DOCTOR", new_user_registration_path(role: "doctor"), class: "btn red accent-1 btn-large" %>
   </div>
+<% elsif current_user && current_user.role = "doctor" %>
+  <div class="col s12 m12 center">
+    <%= link_to "Create request", users_path, class: "btn red accent-1 btn-large" %>
+    <%= link_to "My requests", doctor_dashboard_path(current_user), class: "btn red accent-1 btn-large" %>
+  </div>
+<% else %>
+  <div class="col s12 m12 center">
+    <%= link_to "Make a request", users_path, class: "btn red accent-1 btn-large" %>
+  </div>
+<% end %>
+
 </div>
 <hr>
 <div class="container text-center padded features">

@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :requests_as_doctor, class_name: 'Request', foreign_key: 'doctor_id'
   has_many :requests_as_patient, class_name: 'Request', foreign_key: 'patient_id'
   has_many :pharmacies
+  has_many :chat_sessions
+  has_many :chat_sessions, through: :requests
 
   # validates :username, presence: true
   # validates :last_name, presence: true
@@ -40,15 +42,15 @@ class User < ApplicationRecord
     return user
   end
 
-  def active_for_authentication?
-    super && approved?
-  end
+  # def active_for_authentication?
+  #   super && approved?
+  # end
 
-  def inactive_message
-    if !approved?
-      :not_approved
-    else
-      super # Use whatever other message
-    end
-  end
+  # def inactive_message
+  #   if !approved?
+  #     :not_approved
+  #   else
+  #     super # Use whatever other message
+  #   end
+  # end
 end

@@ -14,6 +14,20 @@ class RequestsController < ApplicationController
      redirect_to patient_dashboard_path(current_user)
   end
 
+  def accept
+    @request = Request.find(params[:id])
+    @request.approve
+    @chat_session = ChatSession.create!(doctor: @request.doctor, request: @request, patient: @request.patient)
+    @chat_session.activate
+    redirect_to doctor_dashboard_path(current_user)
+  end
+
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to patient_dashboard_path(current_user)
+  end
+
   def request_params
       params.require(:request).permit(:description, :status,  :patient_id, :category_id, :doctor_id)
   end

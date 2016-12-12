@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col m4 center">
+    <p>Doctor info</p>
+    <p><%= @doctor.first_name %></p>
+    <p><%= @doctor.last_name %></p>
+  </div>
+  <div class="col m4">
+    <div class="row">
+      <div class="col m12 center">
+        <p>This is the chat session for request: <%= @request.description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12">
+        history:
+        <% @chat_messages.each do |message| %>
+        <div class="card">
+          <p><%= message.content %></p>
+          <p>sent by: <%= message.sender.role %></p>
+        </div>
+        <% end %>
+      <hr>
+        <%= simple_form_for [ChatMessage.new], url: doctor_dashboard_chat_session_new_message_url(@chat_session), method: :post do |f| %>
+          <%= f.text_field :content, placeholder: "write your message here" %>
+          <%= f.submit "send"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col m4 center">
+    <p>Patient info</p>
+    <p><%= @patient.first_name %></p>
+    <p><%= @patient.last_name %></p>
+  </div>
+</div>

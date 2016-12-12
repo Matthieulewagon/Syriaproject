@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208151633) do
+ActiveRecord::Schema.define(version: 20161212150048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,28 @@ ActiveRecord::Schema.define(version: 20161208151633) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "chat_messages", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "chat_session_id"
+    t.string   "content"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["chat_session_id"], name: "index_chat_messages_on_chat_session_id", using: :btree
+    t.index ["sender_id"], name: "index_chat_messages_on_sender_id", using: :btree
+  end
+
+  create_table "chat_sessions", force: :cascade do |t|
+    t.integer  "doctor_id"
+    t.integer  "request_id"
+    t.integer  "patient_id"
+    t.boolean  "active",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["doctor_id"], name: "index_chat_sessions_on_doctor_id", using: :btree
+    t.index ["patient_id"], name: "index_chat_sessions_on_patient_id", using: :btree
+    t.index ["request_id"], name: "index_chat_sessions_on_request_id", using: :btree
   end
 
   create_table "diagnoses", force: :cascade do |t|
@@ -59,13 +81,13 @@ ActiveRecord::Schema.define(version: 20161208151633) do
 
   create_table "requests", force: :cascade do |t|
     t.string   "description"
-    t.string   "status"
+    t.string   "status",      default: "unapproved"
     t.string   "urgency"
     t.integer  "patient_id"
     t.integer  "doctor_id"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.index ["category_id"], name: "index_requests_on_category_id", using: :btree
     t.index ["doctor_id"], name: "index_requests_on_doctor_id", using: :btree
     t.index ["patient_id"], name: "index_requests_on_patient_id", using: :btree
@@ -102,11 +124,11 @@ ActiveRecord::Schema.define(version: 20161208151633) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "admin",                  default: false, null: false
-    t.boolean  "approved",               default: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "chat_messages", "chat_sessions"
   add_foreign_key "diagnoses", "pharmacies"
   add_foreign_key "diagnoses", "requests"
   add_foreign_key "pharmacies", "users"

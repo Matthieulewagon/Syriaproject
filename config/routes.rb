@@ -10,19 +10,23 @@ devise_for :users,
 
   resources :users, only: [:index, :show, :edit, :update] do
 
-    resources :requests, only: [:new, :create] do
+    resources :requests, only: [:new, :create, :destroy] do
 
       resources :dignoses, only: [:new, :create, :destroy]
     end
   end
+
   resource :patient_dashboard, only: [:show, :destroy]
   resource :doctor_dashboard, only: [:show, :destroy] do
+    resources :chat_sessions, only: :show do
+      post 'new_message'
+    end
     resources :pharmacies
 
     resources :requests, only: [] do
       member do
-        get 'accept'
-        get 'decline'
+        post 'accept'
+        post 'decline'
       end
     end
   end
