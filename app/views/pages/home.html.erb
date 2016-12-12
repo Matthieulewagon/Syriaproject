@@ -1,7 +1,7 @@
 
 <div class="responsive_banner" style="background">
   <div class="banner-content text-center">
-<div style="text-align:center"><link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"><h1>Pin a Doctor</h1></div>
+<div style="text-align:center"> <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> <h1>welcome</h1></div>
     <!-- <h1>Pin a doctor</h1> -->
     <% if user_signed_in? %>
   <center>
@@ -12,6 +12,40 @@
     <%= link_to  "Search", new_user_registration_path, class: "btn btn-danger btn-lg" %>
     </center>
     <% end %>
+    <label>Choose a specality</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Audiologist</option>
+    <option value="2">Allergist</option>
+    <option value="3">Cardiologist</option>
+    <option value="4">Dentist</option>
+    <option value="5">Dermatologist</option>
+    <option value="6">Endocrinologist</option>
+    <option value="7">Endocrinologist</option>*
+   <option value="8">Epidemiologist</option>
+   <option value="9">Gynecologist</option>
+   <option value="10">Immunologist</option>
+   <option value="11">Infectious Disease Specialist</option>
+   <option value="12">Internal Medicine Specialist</option>
+   <option value="13">Medical Geneticist</option>
+   <option value="14">Microbiologist</option>
+   <option value="15">Neonatologist</option>
+   <option value="16">Neurologist</option>
+   <option value="17"> Neurosurgeon</option>
+   <option value="18">Obstetrician</option>
+   <option value="19">Oncologist</option>
+   <option value="20">Orthopedic Surgeon</option>
+   <option value="21">ENT Specialist</option>
+   <option value="22">Pediatrician</option>
+   <option value="23">Physiologist</option>
+   <option value="24">Plastic Surgeon</option>
+   <option value="25">Podiatrist</option>
+   <option value="26">Psychiatrist</option>
+   <option value="27">Radiologist</option>
+   <option value="28">Rheumatologist</option>
+   <option value="29">Surgeon</option>
+   <option value="30">Urologist</option>
+</select>
 
   </div>
 </div>
