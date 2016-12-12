@@ -4,7 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :role, required: true, placeholder: "doctor or patient"%>
+    <%= f.input :role, required: true, collection: ["Doctor" , "patient"]%>
     <%= f.input :username, required: true%>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
@@ -14,11 +14,10 @@
     <%= f.input :phone_number%>
     <%= f.input :skype_username, required: false%>
     <%= f.input :address, required: true%>
-
-
-
-
-
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :specialisation, collection: ["Audiologist", "Allergist", "Anesthesiologist", "Cardiologist", "Dentist", "Dermatologist", "Endocrinologist", "Epidemiologist", "Gynecologist", "Immunologist", "Infectious Disease Specialist", "Internal Medicine Specialist", "Medical Geneticist", "Microbiologist", "Neonatologist", "Neurosurgeon", "Obstetrician","Oncologist", "Orthopedic Surgeon", "ENT Specialist", "Podiatrist", "Pediatrician", "Physiologist", "Plastic Surgeon", "Podiatrist", "Psychiatrist", "Radiologist", "Rheumatologist", "Surgeon" , "Urologist"] %>
+    <%= f.input :category, collection: ["Male", "Female"] %>
   </div>
 
   <div class="form-actions">
