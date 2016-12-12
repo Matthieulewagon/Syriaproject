@@ -35,6 +35,7 @@
                 password: "foobar",
                 password_confirmation: "foobar",
                 username: Faker::Name.first_name,
+                specialisation: 'Dentist',
                 role: 'doctor')
 
   User.create!(phone_number: Faker::PhoneNumber.cell_phone,
@@ -46,6 +47,7 @@
                 password: "foobar",
                 password_confirmation: "foobar",
                 username: Faker::Name.first_name,
+                specialisation: 'ENT Specialist',
                 role: 'doctor')
 
   User.create!(phone_number: Faker::PhoneNumber.cell_phone,
@@ -57,6 +59,7 @@
                 password: "foobar",
                 password_confirmation: "foobar",
                 username: Faker::Name.first_name,
+                specialisation: 'Internal Medicine Specialist',
                 role: 'doctor')
 
 
@@ -69,6 +72,7 @@
                 password: "foobar",
                 password_confirmation: "foobar",
                 username: Faker::Name.first_name,
+                specialisation: 'Surgeon',
                 role: 'doctor')
 
 
