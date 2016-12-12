@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :sign_in_patient
   # Include default devise modules. Others available are:
 
   devise :database_authenticatable, :registerable,
@@ -38,6 +39,21 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  def sign_in_patient
+    self.update(approved: true) if self.role == "patient"
+  end
+  def active_for_authentication?
+    super && approved?
+  end
+
+  def inactive_message
+    if !approved?
+      :not_approved
+    else
+      super # Use whatever other message
+    end
   end
 
 end
