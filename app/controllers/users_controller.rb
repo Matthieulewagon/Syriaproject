@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
   def index
     @doctors = User.where(role: "doctor")
+
+    if params[:user].present?
+      if params[:user][:specialisation].present?
+        @doctors = @doctors.where(specialisation: params[:user][:specialisation])
+      end
+
+      if params[:user][:address].present?
+        @doctors = @doctors.near(params[:user][:address], 5)
+      end
+    end
     # if address = params[:address].presence
     #   @doctors = User.where(role: 'doctor').where.not(latitude: nil, longitude: nil).near(address, 20)
     # else
