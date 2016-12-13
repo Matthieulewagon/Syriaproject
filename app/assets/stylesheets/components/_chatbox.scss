@@ -1,0 +1,12 @@
+.chatbox {
+  .message {
+    font-size: 16px;
+
+    .text-doctor {
+      background-color: $secondary-color;
+    }
+    .text-patient {
+      background-color: $link-color;
+    }
+  }
+}
