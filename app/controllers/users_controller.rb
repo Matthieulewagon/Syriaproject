@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
   def index
-    if address = params[:address].presence
-      @doctors = User.where(role: 'doctor').where.not(latitude: nil, longitude: nil).near(address, 20)
-    else
-      @doctors = User.where(role: 'doctor').where.not(latitude: nil, longitude: nil)
-    end
-    @hash = Gmaps4rails.build_markers(@doctors) do |doctor, marker|
-      marker.lat doctor.latitude
-      marker.lng doctor.longitude
-    end
+    @doctors = User.where(role: "doctor")
+    # if address = params[:address].presence
+    #   @doctors = User.where(role: 'doctor').where.not(latitude: nil, longitude: nil).near(address, 20)
+    # else
+    #   @doctors = User.where(role: 'doctor').where.not(latitude: nil, longitude: nil)
+    # end
+    # @hash = Gmaps4rails.build_markers(@doctors) do |doctor, marker|
+    #   marker.lat doctor.latitude
+    #   marker.lng doctor.longitude
+    # end
   end
 
   def edit
