@@ -4,9 +4,15 @@
 
     .text-doctor {
       background-color: $secondary-color;
+      width: 50%;
+      color: #ffffff;
+      padding-left: 10px;
+      border-radius: 35px;
     }
     .text-patient {
-      background-color: $link-color;
+      background-color: #bdbdbd;
+      padding-left: 10px;
+      border-radius: 35px;
     }
   }
 }
