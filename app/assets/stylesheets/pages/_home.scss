@@ -1,11 +1,23 @@
 .homepage {
-  padding: 50px;
+  padding-top: 20px;
+}
 
-  &.homepage-doctor {
-    background-color: red;
+.panel {
+  padding: 100px 50px;
+  background-size: cover;
+  background-position: center center;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  transition: all 300ms ease-in-out;
 
+  &:hover {
+    background-size: 100%;
   }
-  &.homepage-me {
-    background-color: blue;
+
+  &.panel-patient {
+    background-image: image-url('need-doctor.jpg');
+  }
+  &.panel-doctor {
+    background-image: image-url('need-doctor.jpg');
   }
 }

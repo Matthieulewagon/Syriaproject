@@ -1,57 +1,56 @@
-<div class="row">
-  <% if !current_user %>
-    <div class="col s12 m6 center">
-      <div class="homepage homepage-me">
-        <%= link_to "I NEED HELP", new_user_registration_path(role: "patient"), class: "btn red base btn-large" %>
-      </div>
-    </div>
-    <div class="col s12 m6 center">
-      <div class="homepage homepage-me">
-        <%= link_to "I’M A DOCTOR", new_user_registration_path(role: "doctor"), class: "btn black base btn-large" %>
-      </div>
-    </div>
-  <% elsif current_user && current_user.role = "doctor" %>
-    <div class="col s12 m12 center">
-      <%= link_to "Create request", users_path, class: "btn red base btn-large" %>
-      <%= link_to "My requests", doctor_dashboard_path(current_user), class: "btn red base btn-large" %>
-    </div>
-  <% else %>
-    <div class="col s12 m12 center">
-      <%= link_to "Make a request", users_path, class: "btn red base btn-large" %>
-    </div>
-  <% end %>
-</div>
+<div class="homepage">
 
-
-<div class="section-baseline">
   <div class="row">
-    <div class="col m2">
-      <h2><i class="material-icons md-48">local_hospital</i></h2>
-    </div>
-    <div class="col m10">
-      <h2>Need medecins or medical advices?</h2>
-      <p class="light">Create your account on PinAdoctor and find the doctors who accepte to work for free around you!</p>
+    <% if !current_user %>
+      <div class="col s12 m6 center">
+        <div class="panel panel-patient">
+          <%= link_to "I NEED HELP", new_user_registration_path(role: "patient"), class: "btn red base btn-large" %>
+        </div>
+      </div>
+      <div class="col s12 m6 center">
+        <div class="panel panel-doctor">
+          <%= link_to "I AM DOCTOR", new_user_registration_path(role: "doctor"), class: "btn black base btn-large" %>
+        </div>
+      </div>
+    <% elsif current_user && current_user.role = "doctor" %>
+      <div class="col s12 m12 center">
+        <%= link_to "Create request", users_path, class: "btn red base btn-large" %>
+        <%= link_to "My requests", doctor_dashboard_path(current_user), class: "btn black base btn-large" %>
+      </div>
+    <% else %>
+      <div class="col s12 m12 center">
+        <%= link_to "Make a request", users_path, class: "btn red base btn-large" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="section-baseline">
+    <div class="row text-center">
+      <div class="col m12">
+        <h2>Need medecins or medical advices?</h2>
+        <p class="light">Create your account on PinAdoctor and find the doctors who accepte to work for free around you!</p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col s12 m4">
-        <h2><i class="material-icons md-48">assistant_photo</i></h2>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <h2 class="text-center"><i class="material-icons md-48">assistant_photo</i></h2>
         <h5>Enter Location and Specialization</h5>
         <p class="light">Find the doctor you need by typing your location and the specialization you need.</p>
-    </div>
-
-    <div class="col s12 m4">
-        <h2><i class="material-icons md-48">message</i></h2>
+      </div>
+      <div class="col s12 m4">
+        <h2 class="center"><i class="material-icons md-48">local_hospital</i></h2>
         <h5>Create a Request to the choosen doctor</h5>
         <p class="light">Send him a request with what you need and/or your question.</p>
-    </div>
-    <div class="col s12 m4">
-        <h2><i class="material-icons md-48">question_answer</i></h2>
+      </div>
+      <div class="col s12 m4">
+        <h2 class="text-center"><i class="material-icons md-48">question_answer</i></h2>
         <h5>The doctor will start soon a Chat with you!</h5>
         <p class="light">The doctor is going to anwer you and start a conversation to fix an appointement and/or to answer your questions.</p>
+      </div>
     </div>
   </div>
+
 </div>
