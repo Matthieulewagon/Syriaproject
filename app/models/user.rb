@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :sign_in_patient
+  # after_create :sign_in_patient
   # Include default devise modules. Others available are:
 
   devise :database_authenticatable, :registerable,
