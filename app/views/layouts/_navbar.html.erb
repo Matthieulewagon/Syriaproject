@@ -1,9 +1,10 @@
-<nav>
-  <div class="container">
+<nav class="blue-grey lighten-1">
+
     <div class="nav-wrapper">
 
-      <%= link_to root_path do %>
-      <%= image_tag('logo.gif', :size => '35x60') %>
+
+      <%= link_to root_path, class: 'brand-logo center' do %>
+        <%= image_tag('logo.png', :size => '50x50') %>
       <% end %>
 
       <ul class="right hide-on-med-and-down">
@@ -23,5 +24,5 @@
       </ul>
 
     </div>
-  </div>
+
 </nav>

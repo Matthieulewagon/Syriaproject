@@ -1,0 +1,11 @@
+.homepage {
+  padding: 50px;
+
+  &.homepage-doctor {
+    background-color: red;
+
+  }
+  &.homepage-me {
+    background-color: blue;
+  }
+}
