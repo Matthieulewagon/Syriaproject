@@ -1,5 +1,8 @@
 @import "materialize";
-@import "pages/index";
+@import "variables";
+
+@import "components/grid";
+@import "pages/home";
 
 body {
   display: flex;
