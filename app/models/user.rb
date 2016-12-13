@@ -7,6 +7,7 @@ class User < ApplicationRecord
           omniauth_providers: [:facebook]
 
   mount_uploader :photo, PhotoUploader
+  mount_uploader :document, DocumentUploader
 
   has_many :requests_as_doctor, class_name: 'Request', foreign_key: 'doctor_id'
   has_many :requests_as_patient, class_name: 'Request', foreign_key: 'patient_id'
