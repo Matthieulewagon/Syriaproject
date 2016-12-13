@@ -18,6 +18,8 @@
 
     <%= javascript_include_tag 'application' %>
 
+    <%= yield(:after_js) %>
+
   </head>
   <body>
   <%= render 'layouts/navbar' %>

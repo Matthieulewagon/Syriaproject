@@ -16,6 +16,9 @@ Geocoder.configure(
   # always_raise: [],
 
   # Calculation options
+  :lookup    => :google,
+  :api_key   => ENV['AIzaSyAGQrHyn7w2H6RQbJ_xhZNBUVMYmtVgYYU'],
+  :use_https => true,
   :units => :km,
   # units: :mi,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
