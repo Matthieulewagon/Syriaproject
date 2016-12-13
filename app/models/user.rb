@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :sign_in_patient
+  # after_create :sign_in_patient
   # Include default devise modules. Others available are:
 
   devise :database_authenticatable, :registerable,
@@ -7,6 +7,7 @@ class User < ApplicationRecord
           omniauth_providers: [:facebook]
 
   mount_uploader :photo, PhotoUploader
+  mount_uploader :document, DocumentUploader
 
   has_many :requests_as_doctor, class_name: 'Request', foreign_key: 'doctor_id'
   has_many :requests_as_patient, class_name: 'Request', foreign_key: 'patient_id'
