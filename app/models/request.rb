@@ -2,6 +2,8 @@ class Request < ApplicationRecord
   belongs_to :patient, class_name: 'User'
   belongs_to :doctor, class_name: 'User'
   belongs_to :category
+  has_one :chat_session
+
   validates :description, presence: true
   # validates :status, presence: true
   # validates :patient_id, presence: true

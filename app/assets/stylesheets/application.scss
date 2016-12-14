@@ -2,8 +2,36 @@
 @import "variables";
 
 @import "components/grid";
+
+@import "components/chatbox";
+@import "pages/home";
 @import "components/icons";
 @import "components/typography";
 @import "components/sections";
 
-@import "pages/home";
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.jumbo-header {
+  margin-top: 100px;
+}
+
+.black-text {
+  font-color: black;
+}
+
+a.chat_session {
+  color: black;
+  text-decoration: none; /* no underline */
+}
+
+.chat-profile-card{
+  height: 300px;
+}
