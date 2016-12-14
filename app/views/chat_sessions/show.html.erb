@@ -10,20 +10,46 @@
         <p>Chat about: <%= @request.description %></p>
       </div>
     </div>
+
+
+ <!--    <div class="chatbox">
+      <div class="message text-doctor">
+        <p>blanalhalzhea</p>
+      </div>
+      <div class="message text-patien">
+        blanalhalzhea
+      </div>
+    </div>
+ -->
+
     <div class="row">
       <div class="col m12">
-        history:
-        <% @chat_messages.each do |message| %>
-        <div class="card">
-          <p><%= message.content %></p>
-          <p>sent by: <%= message.sender.role %></p>
+        <div class="chatbox">
+        Conversation:
+          <div class="row">
+            <% @chat_messages.each do |message| %>
+              <% if message.sender.role == "doctor"%>
+                <div class="col m12">
+                  <div class="message">
+                    <p class="text-doctor"><%= message.content %></p>
+                  </div>
+                </div>
+              <% end %>
+              <% if message.sender.role == "patient"%>
+                <div class="offset-m6 col m6">
+                <div class="message">
+                  <p class="text-patient"><%= message.content %></p>
+                </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <hr>
+          <%= simple_form_for [ChatMessage.new], url: doctor_dashboard_chat_session_new_message_url(@chat_session), method: :post do |f| %>
+            <%= f.text_field :content, placeholder: "write your message here" %>
+            <%= f.submit "send"%>
+          <% end %>
         </div>
-        <% end %>
-      <hr>
-        <%= simple_form_for [ChatMessage.new], url: doctor_dashboard_chat_session_new_message_url(@chat_session), method: :post do |f| %>
-          <%= f.text_field :content, placeholder: "write your message here" %>
-          <%= f.submit "send"%>
-        <% end %>
       </div>
     </div>
   </div>
