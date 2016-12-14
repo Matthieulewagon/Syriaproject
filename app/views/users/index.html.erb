@@ -18,7 +18,7 @@
       <thead>
         <tr>
           <th>List of Doctors</th>
-          <th colspan="4"></th>
+          <th colspan="3"></th>
           <th>distance</th>
         </tr>
       </thead>
@@ -29,8 +29,8 @@
             <td><%= doctor.last_name %></td>
             <td><%= doctor.specialisation %> </td>
             <td><%= doctor.address %></td>
-            <td><%= link_to "Create request", new_user_request_path(doctor) %></td>
             <td><%= rand(5..300) %> km away</td>
+            <td><%= link_to "Create request", new_user_request_path(doctor) %></td>
           </tr>
         <% end %>
       </tbody>
