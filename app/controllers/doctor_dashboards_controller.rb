@@ -3,8 +3,8 @@ class DoctorDashboardsController < ApplicationController
   def index
   end
   def show
-    @requests_doctor = Request.where(doctor_id: current_user.id).where.not(status: "approved")
-    @chat_sessions = ChatSession.where(doctor_id: current_user.id)
+    @requests_doctor = Request.where(doctor_id: current_user.id).where.not(status: "approved").order(created_at: :desc)
+    @chat_sessions = ChatSession.where(doctor_id: current_user.id).order(created_at: :desc)
     # @requests = Request.where(doctor_id: params[:user_id] == doctor_id: current_user.id)
   end
 
