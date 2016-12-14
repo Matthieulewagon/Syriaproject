@@ -6,7 +6,7 @@
   <div class="col l4">
     <%= simple_form_for User.new, url: users_path, html: { method: :get } do |f| %>
     <%= f.select :specialisation,
-          ["Audiologist", "Allergist", "Anesthesiologist", "Cardiologist", "Dentist", "Dermatologist", "Endocrinologist", "Epidemiologist", "Gynecologist", "Immunologist", "Infectious Disease Specialist", "Internal Medicine Specialist", "Medical Geneticist", "Microbiologist", "Neonatologist", "Neurosurgeon", "Obstetrician","Oncologist", "Orthopedic Surgeon", "ENT Specialist", "Podiatrist", "Pediatrician", "Physiologist", "Plastic Surgeon", "Podiatrist", "Psychiatrist", "Radiologist", "Rheumatologist", "Surgeon" , "Urologist"],
+          ["Audiologist", "Allergist", "Anesthesiologist", "Cardiologist", "Dentist", "Dermatologist", "Endocrinologist", "Epidemiologist", "Gynecologist", "Immunologist", "Infectious Disease Specialist", "Internal Medicine Specialist", "Medical Geneticist", "Microbiologist", "Neonatologist", "Neurosurgeon", "Obstetrician","Oncologist", "Ophthalmologist","Ophthalmologist", "Orthopedic Surgeon", "ENT Specialist", "Podiatrist", "Pediatrician", "Physiologist", "Plastic Surgeon", "Podiatrist", "Psychiatrist", "Radiologist", "Rheumatologist", "Surgeon" , "Urologist"],
           include_blank: 'Choose Specialist' %>
     <%= f.input  :address %>
     <%= link_to 'Reset', users_path, class: 'btn' %>
