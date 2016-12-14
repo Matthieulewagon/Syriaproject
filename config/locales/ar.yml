@@ -19,7 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ar:
   home:
     banner_header: "Need medecins or medical advices?"
     banner_text: "Create your account on PinAdoctor and find the doctors who accepte to work for free around you!"
