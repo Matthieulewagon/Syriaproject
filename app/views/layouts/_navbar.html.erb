@@ -6,12 +6,12 @@
 
     <ul class="right hide-on-med-and-down">
       <% if current_user && current_user.role == "patient" %>
-        <li><%= link_to "My dashboard", patient_dashboard_path(current_user) %></li>
+        <li><%= link_to patient_dashboard_path(current_user) do %>My dashboard<span class="new badge"></span><% end %></li>
         <li><%= link_to 'My profile', user_path(current_user) %></li>
         <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
       <% elsif current_user && current_user.role == "doctor" %>
-        <li><%= link_to 'My dashboard', doctor_dashboard_path(current_user) %></li>
+        <li><%= link_to doctor_dashboard_path(current_user) do %>My dashboard<span class="new badge"></span><% end %></li>
         <li><%= link_to 'My profile', user_path(current_user) %></li>
         <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
