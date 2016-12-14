@@ -1,0 +1,14 @@
+$font-weight-normal: 400;
+
+body {
+  // font-family: $base-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-normal;
+  font-family: $base-font;
+}
+
+.text-center {
+  text-align: center;
+}
