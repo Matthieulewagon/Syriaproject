@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 dir="rtl">تعديل <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <h3><%= f.error_notification %></h3>
@@ -21,11 +21,11 @@
     <%= f.input :document_cache, as: :hidden %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :password, autocomplete: "off", placeholder: "leave it blank if you don't want to change it", required: false %>
+    <%= f.input :password, autocomplete: "off", placeholder: "دع هذا الحقل فارغ إذا لم ترغب بتعديل كلمة السر", required: false %>
     <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, placeholder: "we need your current password to confirm your changes!", required: true %>
+    <%= f.input :current_password, placeholder: "بحاجة لكلمة السر الحالية لتأكيد التحديث", required: true %>
      <%= f.input :specialisation, collection: ["Audiologist", "Allergist", "Anesthesiologist", "Cardiologist", "Dentist", "Dermatologist", "Endocrinologist", "Epidemiologist", "Gynecologist", "Immunologist", "Infectious Disease Specialist", "Internal Medicine Specialist", "Medical Geneticist", "Microbiologist", "Neonatologist", "Neurosurgeon", "Obstetrician","Oncologist", "Orthopedic Surgeon", "ENT Specialist", "Podiatrist", "Pediatrician", "Physiologist", "Plastic Surgeon", "Podiatrist", "Psychiatrist", "Radiologist", "Rheumatologist", "Surgeon" , "Urologist"] %>
-    <%= f.input :category, collection: ["Male", "Female"] %>
+    <%= f.input :category, collection: ["ذكر", "انثى"] %>
 
   </div>
 
@@ -34,8 +34,8 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3 dir="auto">أغلق حسابي</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p dir="auto">غير سعيد؟<%= link_to "أغلق حسابي الشخصي", registration_path(resource_name), data: { confirm: "هل أنت متأكد؟" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<p dir="auto"><%= link_to "عودة", :back %></p>
