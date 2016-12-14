@@ -1,27 +1,23 @@
-<nav>
-  <div class="container">
-    <div class="nav-wrapper">
+<nav class="red base">
+  <div class="nav-wrapper">
+    <%= link_to root_path, class: 'brand-logo center' do %>
+      <%= image_tag('logo.png', :size => '50x50') %>
+    <% end %>
 
-      <%= link_to root_path do %>
-      <%= image_tag('logo.gif', :size => '35x60') %>
+    <ul class="right hide-on-med-and-down">
+      <% if current_user && current_user.role == "patient" %>
+        <li><%= link_to "My dashboard", patient_dashboard_path(current_user) %></li>
+        <li><%= link_to 'My profile', user_path(current_user) %></li>
+        <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      <% elsif current_user && current_user.role == "doctor" %>
+        <li><%= link_to 'My dashboard', doctor_dashboard_path(current_user) %></li>
+        <li><%= link_to 'My profile', user_path(current_user) %></li>
+        <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path %>
       <% end %>
-
-      <ul class="right hide-on-med-and-down">
-        <% if current_user && current_user.role == "patient" %>
-          <li><%= link_to "My dashboard", patient_dashboard_path(current_user) %></li>
-          <li><%= link_to 'My profile', user_path(current_user) %></li>
-          <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-        <% elsif current_user && current_user.role == "doctor" %>
-          <li><%= link_to 'My dashboard', doctor_dashboard_path(current_user) %></li>
-          <li><%= link_to 'My profile', user_path(current_user) %></li>
-          <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <%= link_to "Log in", new_user_session_path %>
-        <% end %>
-      </ul>
-
-    </div>
+    </ul>
   </div>
 </nav>
