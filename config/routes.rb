@@ -19,6 +19,7 @@ devise_for :users,
   resource :patient_dashboard, only: [:show, :destroy]
   resource :doctor_dashboard, only: [:show, :destroy] do
     resources :chat_sessions, only: :show do
+      post 'approve'
       post 'new_message'
     end
     resources :pharmacies

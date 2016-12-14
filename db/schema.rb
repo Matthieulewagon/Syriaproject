@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214105308) do
+ActiveRecord::Schema.define(version: 20161214154130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161214105308) do
     t.boolean  "active",     default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.boolean  "approved",   default: false
     t.index ["doctor_id"], name: "index_chat_sessions_on_doctor_id", using: :btree
     t.index ["patient_id"], name: "index_chat_sessions_on_patient_id", using: :btree
     t.index ["request_id"], name: "index_chat_sessions_on_request_id", using: :btree
