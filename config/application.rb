@@ -18,6 +18,9 @@ Bundler.require(*Rails.groups)
 
 module RailsAirbnbClone
   class Application < Rails::Application
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.available_locales = [:en, :ar]
+    config.i18n.default_locale = :en
     config.generators do |generate|
       generate.assets false
     end

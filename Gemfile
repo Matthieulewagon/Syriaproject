@@ -20,6 +20,7 @@ gem 'omniauth-facebook'
 gem 'pundit'
 gem "geocoder"
 gem "coffee-rails"
+gem 'rails-i18n'
 gem "gmaps4rails"
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
