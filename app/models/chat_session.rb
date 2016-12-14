@@ -10,4 +10,8 @@ class ChatSession < ApplicationRecord
   def deactivate
     self.activate = false
   end
+
+  def approve_doctor_info
+    self.approved = true
+  end
 end

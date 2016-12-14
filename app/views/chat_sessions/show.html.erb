@@ -1,18 +1,24 @@
 <div class="row">
   <div class="col m4 center card chat-profile-card">
     <p><u><%= t('chat_session.doctor_info') %></u></p>
-    <div class="col m6">
-      <p><%= t('chat_session.first_name') %></p>
-      <p><%= t('chat_session.last_name') %></p>
-      <p><%= t('chat_session.phone') %></p>
-      <p><%= t('chat_session.skype') %></p>
-    </div>
-    <div class="col m6">
-      <p><%= @doctor.first_name %></p>
-      <p><%= @doctor.last_name %></p>
-      <p><%= @doctor.phone_number %></p>
-      <p><%= @doctor.skype_username %></p>
-    </div>
+    <% if current_user.role == 'patient' && @chat_session.approved == false %>
+      <p><%= t('chat_session.not_shared_info') %></p>
+    <% elsif current_user.role == 'doctor' && @chat_session.approved == false %>
+      <%= link_to t('chat_session.share_info_button'), doctor_dashboard_chat_session_approve_path(@chat_session), method: :post, class: "btn btn-primary" %>
+    <% else %>
+      <div class="col m6">
+        <p><%= t('chat_session.first_name') %></p>
+        <p><%= t('chat_session.last_name') %></p>
+        <p><%= t('chat_session.phone') %></p>
+        <p><%= t('chat_session.skype') %></p>
+      </div>
+      <div class="col m6">
+        <p><%= @doctor.first_name %></p>
+        <p><%= @doctor.last_name %></p>
+        <p><%= @doctor.phone_number %></p>
+        <p><%= @doctor.skype_username %></p>
+      </div>
+    <% end %>
   </div>
   <div class="col m4">
     <div class="row">
@@ -30,14 +36,14 @@
               <% if message.sender.role == "doctor"%>
                 <div class="col m12">
                   <div class="message">
-                    <p class="text-doctor"><%= message.content %> <br> <small><%= time_ago_in_words(message.created_at) %><%= t('chat_session.first_name') %></small></p>
+                    <p class="text-doctor"><big><%= message.content %></big> <br> <small><%= time_ago_in_words(message.created_at) %><%= t('chat_session.ago') %></small></p>
                   </div>
                 </div>
               <% end %>
               <% if message.sender.role == "patient"%>
                 <div class="offset-m6 col m6">
                 <div class="message">
-                  <p class="text-patient"><%= message.content %>  <br> <small><%= time_ago_in_words(message.created_at) %> <%= t('chat_session.ago') %></small></p>
+                  <p class="text-patient"><big><%= message.content %></big> <br> <small><%= time_ago_in_words(message.created_at) %> <%= t('chat_session.ago') %></small></p>
                 </div>
                 </div>
               <% end %>
