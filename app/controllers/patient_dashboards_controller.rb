@@ -1,6 +1,6 @@
 class PatientDashboardsController < ApplicationController
   def show
-    @requests_patient = Request.where(patient_id: current_user.id)
+    @requests_patient = Request.where(patient_id: current_user.id).where.not(status: "approved")
     @chat_sessions = ChatSession.where(patient_id: current_user.id)
   end
 
