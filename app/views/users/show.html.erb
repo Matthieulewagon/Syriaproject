@@ -68,11 +68,11 @@
   <div class="row">
     <form class="col s12">
       <div class="row">
-        <i class="material-icons prefix">email </i><p>speciality : <%= @user.specialisation %></p>
+        <i class="material-icons prefix">email </i><p>speciality :<%= @user.specialisation %></p>
 
       </div>
   <% if current_user.role == "doctor" %>
-   <a href="<%=cloudinary_url(@user.document) %>">doc</a>
+   <a href="<%=cloudinary_url(@user.document) %>">license document</a>
   <% end %>
     </form>
   </div>
