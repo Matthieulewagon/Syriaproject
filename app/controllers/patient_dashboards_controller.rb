@@ -1,7 +1,7 @@
 class PatientDashboardsController < ApplicationController
   def show
-    @requests_patient = Request.where(patient_id: current_user.id)
-    @chat_sessions = ChatSession.where(patient_id: current_user.id)
+    @requests_patient = Request.where(patient_id: current_user.id).where.not(status: "approved").order(created_at: :desc)
+    @chat_sessions = ChatSession.where(patient_id: current_user.id).order(created_at: :desc)
   end
 
   def destroy
