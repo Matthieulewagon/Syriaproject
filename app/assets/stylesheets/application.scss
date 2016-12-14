@@ -9,15 +9,15 @@
 @import "components/typography";
 @import "components/sections";
 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 .jumbo-header {
   margin-top: 100px;
@@ -30,4 +30,8 @@
 a.chat_session {
   color: black;
   text-decoration: none; /* no underline */
+}
+
+.chat-profile-card{
+  height: 300px;
 }

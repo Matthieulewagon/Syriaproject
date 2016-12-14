@@ -16,7 +16,7 @@
             <th><p><%= request.doctor.first_name %></p></th>
             <th><p><%= request.description %></p></th>
             <th>created <%= time_ago_in_words(request.created_at) %> ago</th>
-            <th><%= link_to "Accept", accept_doctor_dashboard_request_path(request), method: :post %></th>
+            <th><%= link_to accept_doctor_dashboard_request_path(request), method: :post do %><i class="material-icons">launch</i><% end %> </th>
           </tr>
         <% end %>
       </tbody>

@@ -16,7 +16,7 @@
             <th><p><%= request.doctor.first_name %></p></th>
             <th><p><%= request.description %></p></th>
             <th>created <%= time_ago_in_words(request.created_at) %> ago</th>
-            <th><%= link_to "Remove", user_request_path(current_user, request), method: :delete %></th>
+            <th><%= link_to user_request_path(current_user, request), method: :delete do %><i class="material-icons">delete</i><% end %> </th>
           </tr>
         <% end %>
       </tbody>
