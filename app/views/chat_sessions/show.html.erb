@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col m4 center card chat-profile-card">
-    <p><u>Doctor info</u></p>
+    <p><u><%= t('chat_session.doctor_info') %></u></p>
     <div class="col m6">
-      <p>first name: </p>
-      <p>last name: </p>
-      <p>phone: </p>
-      <p>skype: </p>
+      <p><%= t('chat_session.first_name') %></p>
+      <p><%= t('chat_session.last_name') %></p>
+      <p><%= t('chat_session.phone') %></p>
+      <p><%= t('chat_session.skype') %></p>
     </div>
     <div class="col m6">
       <p><%= @doctor.first_name %></p>
@@ -17,42 +17,42 @@
   <div class="col m4">
     <div class="row">
       <div class="col m12 center">
-        <p>Chat about: <%= @request.description %></p>
+        <p><%= t('chat_session.chat_about') %><%= @request.description %></p>
       </div>
     </div>
 
     <div class="row">
       <div class="col m12">
         <div class="chatbox">
-        Conversation:
+        <%= t('chat_session.conversation') %>
           <div class="row">
             <% @chat_messages.each do |message| %>
               <% if message.sender.role == "doctor"%>
                 <div class="col m12">
                   <div class="message">
-                    <p class="text-doctor"><%= message.content %> <br> <small><%= time_ago_in_words(message.created_at) %> ago</small></p>
+                    <p class="text-doctor"><%= message.content %> <br> <small><%= time_ago_in_words(message.created_at) %><%= t('chat_session.first_name') %></small></p>
                   </div>
                 </div>
               <% end %>
               <% if message.sender.role == "patient"%>
                 <div class="offset-m6 col m6">
                 <div class="message">
-                  <p class="text-patient"><%= message.content %>  <br> <small><%= time_ago_in_words(message.created_at) %> ago</small></p>
+                  <p class="text-patient"><%= message.content %>  <br> <small><%= time_ago_in_words(message.created_at) %> <%= t('chat_session.ago') %></small></p>
                 </div>
                 </div>
               <% end %>
             <% end %>
           </div>
           <%= simple_form_for [ChatMessage.new], url: doctor_dashboard_chat_session_new_message_url(@chat_session), method: :post do |f| %>
-            <%= f.text_field :content, placeholder: "write your message here and press [enter]" %>
-            <%= f.submit "send", style: "display:none;"%>
+            <%= f.text_field :content, placeholder: t('chat_session.msg_placeholder') %>
+            <%= f.submit t('buttons.send'), style: "display:none;"%>
           <% end %>
         </div>
       </div>
     </div>
   </div>
   <div class="col m4 center card chat-profile-card">
-    <p>Patient info</p>
+    <p><%= t('chat_session.patient_info') %></p>
     <p><%= @patient.first_name %></p>
     <p><%= @patient.last_name %></p>
   </div>

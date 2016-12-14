@@ -2,22 +2,22 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Care and contribute</h5>
-        <p class="grey-text text-lighten-4">We're the go-to platform for volunteer help</p>
+        <h5 class="white-text"><%= t('footer.slogan_header') %></h5>
+        <p class="grey-text text-lighten-4"><%= t('footer.slogan_text') %></p>
       </div>
       <div class="col l4 offset-l2 s12">
         <ul>
-          <li><%= link_to 'Pharmacies', doctor_dashboard_pharmacies_path, class: "white-text"  %></li>
-          <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Jobs</a></li>
+          <li><%= link_to t('buttons.pharmacies'), doctor_dashboard_pharmacies_path, class: "white-text"  %></li>
+          <li><a class="grey-text text-lighten-3" href="#!"><%= t('buttons.about') %></a></li>
+          <li><a class="grey-text text-lighten-3" href="#!"><%= t('buttons.contact') %></a></li>
+          <li><a class="grey-text text-lighten-3" href="#!"><%= t('buttons.jobs') %></a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container">
-      © 2016 PinADoctor
+      <%= t('footer.copywright') %>
       <a class="grey-text text-lighten-4 right" href="#!"></a>
     </div>
   </div>
