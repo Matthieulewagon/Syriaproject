@@ -1,79 +1,4 @@
-# Seed users
-# user = User.create!(email: "matthieu@admin.com",
-#                 password: "foobar",
-#                 password_confirmation: "foobar",
-#                 first_name: Faker::Name.first_name,
-#                 last_name: Faker::Name.last_name,
-#                 username: Faker::Name.first_name,
-                # )
-
-# # Seed doctors
-# 10.times do |n|
-#   # user = User.create!(email: Faker::Internet.email,
-#   #               password: "foobar",
-#   #               password_confirmation: "foobar")
-
-#   User.create!(phone_number: Faker::PhoneNumber.cell_phone,
-#                 skype_username: Faker::Hipster.word,
-#                 first_name: Faker::Name.first_name,
-#                 last_name: Faker::Name.last_name,
-#                 address: Faker::Address.street_address,
-#                 email: Faker::Internet.email,
-#                 password: "foobar",
-#                 password_confirmation: "foobar",
-#                 username: Faker::Name.first_name,
-#                 specialisation: 'doctor')
-# end
-
-  # User.where(specialisation: 'doctor').destroy_all
-  # User.create!(phone_number: Faker::PhoneNumber.cell_phone,
-  #               skype_username: Faker::Hipster.word,
-  #               first_name: Faker::Name.first_name,
-  #               last_name: Faker::Name.last_name,
-  #               address: 'Hawash, Syria',
-  #               email: Faker::Internet.email,
-  #               password: "foobar",
-  #               password_confirmation: "foobar",
-  #               username: Faker::Name.first_name,
-  #               specialisation: 'Dentist',
-  #               specialisation: 'doctor')
-
-  # User.create!(phone_number: Faker::PhoneNumber.cell_phone,
-  #               skype_username: Faker::Hipster.word,
-  #               first_name: Faker::Name.first_name,
-  #               last_name: Faker::Name.last_name,
-  #               address: 'Palmyra, Syria',
-  #               email: Faker::Internet.email,
-  #               password: "foobar",
-  #               password_confirmation: "foobar",
-  #               username: Faker::Name.first_name,
-  #               specialisation: 'ENT Specialist',
-  #               specialisation: 'doctor')
-
-  # User.create!(phone_number: Faker::PhoneNumber.cell_phone,
-  #               skype_username: Faker::Hipster.word,
-  #               first_name: Faker::Name.first_name,
-  #               last_name: Faker::Name.last_name,
-  #               address: 'Homs, Syria',
-  #               email: Faker::Internet.email,
-  #               password: "foobar",
-  #               password_confirmation: "foobar",
-  #               username: Faker::Name.first_name,
-  #               specialisation: 'Internal Medicine Specialist',
-  #               specialisation: 'doctor')
-
-
-  # User.create!(phone_number: Faker::PhoneNumber.cell_phone,
-  #               skype_username: Faker::Hipster.word,
-  #               first_name: Faker::Name.first_name,
-  #               last_name: Faker::Name.last_name,
-  #               address: 'Talkalakh, Syria',
-  #               email: Faker::Internet.email,
-  #               password: "foobar",
-  #               password_confirmation: "foobar",
-  #               username: Faker::Name.first_name,
-  #               specialisation: 'Surgeon',
-  #               specialisation: 'doctor')
+#
 
  User.where(role:'doctor').destroy_all
 
@@ -83,8 +8,8 @@
                 last_name: 'Droopy',
                 address: 'Damascus, Syria',
                 email: 'elias.dropy@hotmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Elias',
                 specialisation: 'Dentist',
                 role: 'doctor')
@@ -94,8 +19,8 @@
                 last_name: 'Bitar',
                 address: 'Bagdad street, Damascus, Syria',
                 email: 'elen.fayez@gmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Alan10',
                 specialisation: 'Gynecologist',
                 role: 'doctor')
@@ -105,8 +30,8 @@
                 last_name: 'Abdul',
                 address: 'Aleppo, Alsabil',
                 email: 'hassan.aref@yahoo.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Aref',
                 specialisation: 'Dentist',
                 role: 'doctor')
@@ -116,8 +41,8 @@
                 last_name: 'Diop',
                 address: 'Damascus, Barza,',
                 email: 'hdiop@hotmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: Faker::Name.first_name,
                 specialisation: 'Cardiologist',
                 role: 'doctor')
@@ -127,8 +52,8 @@
                 last_name: 'Al-Dairi',
                 address: 'Damascus, Mokhayyam,',
                 email: 'khalid.dairi@hotmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: Faker::Name.first_name,
                 specialisation: 'ENT Specialist',
                 role: 'doctor')
@@ -138,8 +63,8 @@
                 last_name: 'Aladdin',
                 address: 'Aleppo new round',
                 email: 'aladdinriad@ymail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Aladdin',
                 specialisation: 'Plastic Surgeon',
                 role:'doctor')
@@ -149,8 +74,8 @@
                 last_name: 'Jacob',
                 address: 'Damascus, next to the central pharmacy',
                 email: 'Jacob@hotmail.com.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'jacob970',
                 specialisation: 'Plastic Surgeon',
                 role: 'doctor')
@@ -160,8 +85,8 @@
                 last_name: 'Maloula',
                 address: 'Damascus, housing Przh- Almojtahd',
                 email: 'maloula.samer@gmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'maloula',
                 specialisation: 'Ophthalmologist',
                 role: 'doctor')
@@ -171,8 +96,8 @@
                 last_name: 'Yazigi',
                 address: 'Damascus, Revolution tunnel',
                 email: 'd-yazigi@scs-net.org',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Yazigi',
                 specialisation: 'Cardiologist',
                 role: 'doctor')
@@ -182,8 +107,8 @@
                 last_name: 'Ahmed',
                 address: 'Damascus - Barza',
                 email: 'alaa.ahmed@hotmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Alahmed',
                 specialisation: 'ENT Specialist',
                 role: 'doctor')
@@ -193,8 +118,8 @@
                 last_name: 'Kaplan',
                 address: 'Damascus - Shahbandar',
                 email: 'Kaplan.imad@gmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Kaplan',
                 specialisation: 'Gynecology',
                 role: 'doctor')
@@ -204,8 +129,8 @@
                 last_name: 'al-Jihad',
                 address: 'Damascus, white bridge',
                 email: 'Jihad.Ammar@ymail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
                 username: 'Ammar',
                 specialisation: 'Ophthalmologist',
                 role: 'doctor')
@@ -214,13 +139,6 @@
                 first_name: 'Aziz',
                 last_name: 'Mtanios',
                 address: 'Damascus, Jaramana',
-                email: 'Mtanios@gmail.com',
-                password: "foobar",
-                password_confirmation: "foobar",
-                username: 'Mtanios',
-                specialisation: 'Dentist',
-                role: 'doctor')
-                 address: 'Damascus, Jaramana',
                 email: 'Mtanios@gmail.com',
                 password: "12345",
                 password_confirmation: "12345",
@@ -253,8 +171,8 @@
 # Seed pharmacies
 # 10.times do |n|
 #   # user = User.create!(email: Faker::Internet.email,
-#   #               password: "foobar",
-#   #               password_confirmation: "foobar")
+#   #               password: "12345",
+#   #               password_confirmation: "12345")
 
 #   Pharmacy.create!(name: Faker::Hipster.word,
 #                    phone_number: Faker::PhoneNumber.cell_phone,
@@ -268,8 +186,19 @@
                 last_name: ,
                 address: ,
                 email: ,
-                password: "foobar",
-                password_confirmation: "foobar",
+                password: "12345",
+                password_confirmation: "12345",
+                username: .first_name,
+                specialisation: 'doctor'
+
+  User.create!(phone_number: ,
+                skype_username: ,
+                first_name: ,
+                last_name: ,
+                address: ,
+                email: ,
+                password: "12345",
+                password_confirmation: "12345",
                 username: .first_name,
                 specialisation: 'doctor'
 
@@ -280,18 +209,7 @@
                 address: ,
                 email: ,
                 password: "foobar",
-                password_confirmation: "foobar",
-                username: .first_name,
-                specialisation: 'doctor'
-
-  User.create!(phone_number: ,
-                skype_username: ,
-                first_name: ,
-                last_name: ,
-                address: ,
-                email: ,
-                password: "foobar",
-                password_confirmation: "foobar",
+                password_confirmation: "12345",
                 username: ,
                 specialisation: 'doctor'
 
@@ -302,7 +220,7 @@
                 address: ,
                 email: ,
                 password: "foobar",
-                password_confirmation: "foobar",
+                password_confirmation: "12345",
                 username: ,
                 specialisation: 'doctor'
 
@@ -313,7 +231,7 @@
                 address: ,
                 email: ,
                 password: "foobar",
-                password_confirmation: "foobar",
+                password_confirmation: "12345",
                 username: ,
                 specialisation: 'doctor'
 
@@ -324,7 +242,7 @@
                 address: ,
                 email: ,
                 password: "foobar",
-                password_confirmation: "foobar",
+                password_confirmation: "12345",
                 username: ,
                 specialisation: 'doctor'
 
@@ -335,7 +253,7 @@
                 address: ,
                 email: ,
                 password: "foobar",
-                password_confirmation: "foobar",
+                password_confirmation: "12345",
                 username: ,
                 specialisation: 'doctor'
 
@@ -346,7 +264,7 @@
                 address: ,
                 email: ,
                 password: "foobar",
-                password_confirmation: "foobar",
+                password_confirmation: "12345",
                 username: ,
                 specialisation: 'doctor'
 
