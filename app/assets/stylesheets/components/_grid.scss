@@ -1,5 +1,19 @@
 a.brand-logo {
-  padding-top: 5px;
+  margin-left: 50px;
+  position: relative;
+  padding-left: 60px;
+  line-height: 20px;
+  font-size: 24px;
+  padding-top: 12px;
+  font-weight: bold;
+  img {
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+  span {
+    color: rgba(0, 0, 0, 0.87);
+  }
 }
 
 .container {
