@@ -3,7 +3,7 @@ class ChatSessionsController < ApplicationController
 
   def show
     @doctor = @chat_session.doctor
-    @request = @chat_session.request
+    @request = Request.find(@chat_session.request_id)
     @patient = @request.patient
     @chat_messages = @chat_session.chat_messages
   end

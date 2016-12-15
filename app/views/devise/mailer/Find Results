@@ -1,0 +1,17 @@
+Searching 165 files for "yuna"
+
+/home/vivek/code/Syriaproject/app/views/doctor_dashboards/show.html.erb:
+   34    <%= link_to doctor_dashboard_chat_session_path(session), class: "chat_session" do %>
+   35      <li class="collection-item avatar">
+   36:       <img src="<%= cl_image_tag(@user.photo, :default_image => "my_default_image.png") %>" alt="" class="circle">"
+   37        <span class="title"><u><%= t('doctor_dashboard.with_doctor') %> <%= session.doctor.first_name %></u></span>
+   38        <p><%= t('doctor_dashboard.started') %> <%= time_ago_in_words(session.created_at) %> <%= t('doctor_dashboard.ago') %><br>
+
+/home/vivek/code/Syriaproject/app/views/patient_dashboards/show.html.erb:
+   34    <%= link_to doctor_dashboard_chat_session_path(session), class: "chat_session" do %>
+   35      <li class="collection-item avatar">
+   36:       <img src="images/yuna.jpg" alt="" class="circle">
+   37        <span class="title"><u>with doctor: <%= session.doctor.first_name %></u></span>
+   38        <p>started <%= time_ago_in_words(session.created_at) %> ago<br>
+
+2 matches across 2 files

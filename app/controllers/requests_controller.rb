@@ -17,6 +17,7 @@ class RequestsController < ApplicationController
   def accept
     @request = Request.find(params[:id])
     @request.approve
+    @request.save
     @chat_session = ChatSession.create!(doctor_id: @request.doctor.id, request_id: @request.id, patient_id: @request.patient.id)
     @chat_session.activate
     redirect_to doctor_dashboard_path(current_user)
