@@ -22,7 +22,7 @@
 en:
   home:
     banner_header: "Need medicines or medical advice?"
-    banner_text: "Create your account on DoctorFinder and find the doctors who accepte to work for free around you!"
+    banner_text: "Create your account on DoctorFinder and find the doctors who accept to work for free around you!"
     info_header_1: "Location and Specialization"
     info_text_1: "Find the doctor you need by typing your location and the specialization you need."
     info_header_2: "Create a Request to the chosen doctor"
@@ -33,7 +33,7 @@ en:
   footer:
     slogan_header: "Care and contribute"
     slogan_text: "We're the go-to platform for volunteer help"
-    copywright: "© 2016 PinADoctor"
+    copywright: "© 2016 DoctorFinder"
 
   buttons:
     pharmacies: "Pharmacies"
