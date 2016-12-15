@@ -21,7 +21,7 @@
 
 en:
   home:
-    banner_header: "Need medicines or medical advice?"
+    banner_header: "Need <strong>medicines</strong> or <strong> medical advice?</strong>"
     banner_text: "Create your account on DoctorFinder and find the doctors who accept to work for free around you!"
     info_header_1: "Location and Specialization"
     info_text_1: "Find the doctor you need by typing your location and the specialization you need."
