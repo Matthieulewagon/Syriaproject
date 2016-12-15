@@ -1,26 +1,66 @@
-<div class="row">
-  <div class="col m4 center card chat-profile-card">
-    <p><u><%= t('chat_session.doctor_info') %></u></p>
-    <% if current_user.role == 'patient' && @chat_session.approved == false %>
-      <p><%= t('chat_session.not_shared_info') %></p>
-    <% elsif current_user.role == 'doctor' && @chat_session.approved == false %>
-      <%= link_to t('chat_session.share_info_button'), doctor_dashboard_chat_session_approve_path(@chat_session), method: :post, class: "btn btn-primary" %>
-    <% else %>
-      <div class="col m6">
-        <p><%= t('chat_session.first_name') %></p>
-        <p><%= t('chat_session.last_name') %></p>
-        <p><%= t('chat_session.phone') %></p>
-        <p><%= t('chat_session.skype') %></p>
+<% if current_user.role == 'patient' %>
+  <div class="row">
+    <div class="col m4 center card chat-profile-card">
+      <p><u><%= t('chat_session.doctor_info') %></u></p>
+      <% if current_user.role == 'patient' && @chat_session.approved == false %>
+        <p><%= t('chat_session.not_shared_info') %></p>
+      <% elsif current_user.role == 'doctor' && @chat_session.approved == false %>
+        <%= link_to t('chat_session.share_info_button'), doctor_dashboard_chat_session_approve_path(@chat_session), method: :post, class: "btn btn-primary" %>
+      <% else %>
+        <div class="col m6">
+          <p><%= t('chat_session.first_name') %></p>
+          <p><%= t('chat_session.last_name') %></p>
+          <p><%= t('chat_session.phone') %></p>
+          <p><%= t('chat_session.skype') %></p>
+        </div>
+        <div class="col m6">
+          <p><%= @doctor.first_name %></p>
+          <p><%= @doctor.last_name %></p>
+          <p><%= @doctor.phone_number %></p>
+          <p><%= @doctor.skype_username %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col m6">
+      <div class="row">
+        <div class="col m12 center">
+          <p><%= t('chat_session.chat_about') %><%= @request.description %></p>
+        </div>
       </div>
-      <div class="col m6">
-        <p><%= @doctor.first_name %></p>
-        <p><%= @doctor.last_name %></p>
-        <p><%= @doctor.phone_number %></p>
-        <p><%= @doctor.skype_username %></p>
+
+      <div class="row">
+        <div class="col m12">
+          <div class="chatbox">
+            <div class="row">
+              <% @chat_messages.each do |message| %>
+                <% if message.sender.role == "doctor"%>
+                  <div class="col m12">
+                    <div class="message">
+                      <p class="text-doctor"><big><%= message.content %></big> <br> <small><%= time_ago_in_words(message.created_at) %><%= t('chat_session.ago') %></small></p>
+                    </div>
+                  </div>
+                <% end %>
+                <% if message.sender.role == "patient"%>
+                  <div class="offset-m6 col m6">
+                  <div class="message">
+                    <p class="text-patient"><big><%= message.content %></big> <br> <small><%= time_ago_in_words(message.created_at) %> <%= t('chat_session.ago') %></small></p>
+                  </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            <%= simple_form_for [ChatMessage.new], url: doctor_dashboard_chat_session_new_message_url(@chat_session), method: :post do |f| %>
+              <%= f.text_field :content, placeholder: t('chat_session.msg_placeholder') %>
+              <%= f.submit t('buttons.send'), style: "display:none;"%>
+            <% end %>
+          </div>
+        </div>
       </div>
-    <% end %>
+    </div>
   </div>
-  <div class="col m4">
+<% else %>
+<div class="row">
+  <div class="col m8">
     <div class="row">
       <div class="col m12 center">
         <p><%= t('chat_session.chat_about') %><%= @request.description %></p>
@@ -30,7 +70,6 @@
     <div class="row">
       <div class="col m12">
         <div class="chatbox">
-        <%= t('chat_session.conversation') %>
           <div class="row">
             <% @chat_messages.each do |message| %>
               <% if message.sender.role == "doctor"%>
@@ -62,4 +101,6 @@
     <p><%= @patient.first_name %></p>
     <p><%= @patient.last_name %></p>
   </div>
+  <%= link_to t('chat_session.share_info_button'), doctor_dashboard_chat_session_approve_path(@chat_session), method: :post, class: "btn btn-primary" %>
 </div>
+<% end %>
