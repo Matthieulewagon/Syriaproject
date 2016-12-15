@@ -21,11 +21,11 @@
 
 en:
   home:
-    banner_header: "Need medecins or medical advices?"
-    banner_text: "Create your account on PinAdoctor and find the doctors who accepte to work for free around you!"
+    banner_header: "Need medicines or medical advice?"
+    banner_text: "Create your account on DoctorFinder and find the doctors who accepte to work for free around you!"
     info_header_1: "Location and Specialization"
     info_text_1: "Find the doctor you need by typing your location and the specialization you need."
-    info_header_2: "Create a Request to the choosen doctor"
+    info_header_2: "Create a Request to the chosen doctor"
     info_text_2: "Send him a request with what you need and/or your question."
     info_header_3: "The doctor will start soon a Chat with you!"
     info_text_3: "The doctor is going to anwer you and start a conversation to fix an appointement and/or to answer your questions."
