@@ -220,7 +220,35 @@
                 username: 'Mtanios',
                 specialisation: 'Dentist',
                 role: 'doctor')
-
+                 address: 'Damascus, Jaramana',
+                email: 'Mtanios@gmail.com',
+                password: "12345",
+                password_confirmation: "12345",
+                username: 'Mtanios',
+                specialisation: 'Dentist',
+                role: 'doctor')
+   User.create!(phone_number: '0115645945',
+                skype_username: 'majid.bari',
+                first_name: 'majid',
+                last_name: 'bari',
+                address: 'Aleppo, Alsabil',
+                email: 'majid@gmail.com',
+                password: "12345",
+                password_confirmation: "12345",
+                username: 'majid',
+                specialisation: 'Endocrinologist',
+                role: 'doctor')
+   User.create!(phone_number: '0115645975',
+                skype_username: 'abu.tareq',
+                first_name: 'abu',
+                last_name: 'tareq',
+                address: 'Aleppo, Alsabil',
+                email: 'abu@gmail.com',
+                password: "12345",
+                password_confirmation: "12345",
+                username: 'abu',
+                specialisation: 'Endocrinologist',
+                role: 'doctor')
 
 # Seed pharmacies
 # 10.times do |n|
