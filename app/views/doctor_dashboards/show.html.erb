@@ -13,11 +13,14 @@
       <tbody>
         <% @requests_doctor.each do |request| %>
           <tr>
-            <th><p><%= request.doctor.first_name %></p></th>
-            <th><p><%= request.description %></p></th>
-            <th>created <%= time_ago_in_words(request.created_at) %> ago</th>
+            <td><p><%= request.doctor.first_name %></p></td>
+            <td><p><%= request.description %></p></td>
+            <td>created <%= time_ago_in_words(request.created_at) %> ago</td>
             <% unless request.status == "approved" %>
-            <th><%= link_to accept_doctor_dashboard_request_path(request), method: :post do %><i class="material-icons">launch</i><% end %> </th><% end %>
+            <td><%= link_to accept_doctor_dashboard_request_path(request), method: :post do %><i class="material-icons">launch</i><% end %>
+            </td>
+            <td><%= link_to user_request_path(current_user, request), method: :delete do %><i class="material-icons">delete</i><% end %> </td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
