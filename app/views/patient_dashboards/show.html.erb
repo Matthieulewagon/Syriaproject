@@ -12,10 +12,10 @@
       <tbody>
         <% @requests_patient.each do |request| %>
           <tr>
-            <th><p><%= request.doctor.first_name %></p></th>
-            <th><p><%= request.description %></p></th>
-            <th>created <%= time_ago_in_words(request.created_at) %> ago</th>
-            <th><%= link_to user_request_path(current_user, request), method: :delete do %><i class="material-icons">delete</i><% end %> </th>
+            <td><p><%= request.doctor.first_name %></p></td>
+            <td><p><%= request.description %></p></td>
+            <td>created <%= time_ago_in_words(request.created_at) %> ago</td>
+            <td><%= link_to user_request_path(current_user, request), method: :delete do %><i class="material-icons">delete</i><% end %> </td>
           </tr>
         <% end %>
       </tbody>
