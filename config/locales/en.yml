@@ -70,11 +70,11 @@ en:
     last_name: "last name: "
     phone: "phone: "
     skype: "skype: "
-    chat_about: "Chat about: "
+    chat_about: "Request: "
     conversation: "Conversation: "
     ago: " ago"
     msg_placeholder: "write your message here and press [enter]"
     not_shared_info: "Your doctor hasn't yet shared his information"
-    share_info_button: "Allow the patient to see my information"
+    share_info_button: "Provide the patient my information"
 
 
