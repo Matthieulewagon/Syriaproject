@@ -33,7 +33,8 @@
   <% @chat_sessions.each do |session| %>
   <%= link_to doctor_dashboard_chat_session_path(session), class: "chat_session" do %>
     <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
+      <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+            <%= cl_image_tag(session.doctor.photo,:size => '50x50') %>
       <span class="title"><u>with doctor: <%= session.doctor.first_name %></u></span>
       <p>started <%= time_ago_in_words(session.created_at) %> ago<br>
       </p>

@@ -16,12 +16,13 @@
             <th><p><%= request.doctor.first_name %></p></th>
             <th><p><%= request.description %></p></th>
             <th>created <%= time_ago_in_words(request.created_at) %> ago</th>
-            <th><%= link_to accept_doctor_dashboard_request_path(request), method: :post do %><i class="material-icons">launch</i><% end %> </th>
+            <% unless request.status == "approved" %>
+            <th><%= link_to accept_doctor_dashboard_request_path(request), method: :post do %><i class="material-icons">launch</i><% end %> </th><% end %>
           </tr>
         <% end %>
       </tbody>
     </table>
-  </div>
+    </div>
 
   <div class="col s12 m6">
     <h3 class="center"><%= t('doctor_dashboard.ongoing_chats') %></h3>
@@ -32,8 +33,9 @@
   <ul class="collection">
   <% @chat_sessions.each do |session| %>
   <%= link_to doctor_dashboard_chat_session_path(session), class: "chat_session" do %>
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
+    <!-- <li class="collection-item avatar"> -->
+      <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+      <%= cl_image_tag(session.patient.photo, :size => '50x50') %>
       <span class="title"><u><%= t('doctor_dashboard.with_doctor') %> <%= session.doctor.first_name %></u></span>
       <p><%= t('doctor_dashboard.started') %> <%= time_ago_in_words(session.created_at) %> <%= t('doctor_dashboard.ago') %><br>
       </p>
