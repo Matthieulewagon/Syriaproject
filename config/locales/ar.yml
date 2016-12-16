@@ -18,23 +18,20 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 ar:
   home:
     banner_header: "هل أنت بحاجة الى طبيب أو معلومات طبية؟"
-    banner_text: "انشئ حسابك على DoctorFinder وقم بالبحث عن أطباء وافقوا على العمل مجانا بالقرب منك!"
+    banner_text: "انشئ حسابك على دكتور فايندر وقم بالبحث عن أطباء وافقوا على العمل مجانا بالقرب منك"
     info_header_1: "الموقع والتخصص"
-    info_text_1: "جد الطبيب الذي تحتاج عن طريق كتابة موقعك والتخصص الذي تحتاج."
+    info_text_1: "جد الطبيب الذي تحتاج عن طريق كتابة موقعك والتخصص الذي تحتاج"
     info_header_2: "ارسل طلب إلى الطبيب المختار"
-    info_text_2: "ارسل طلب للطبيب مع ما تحتاج و/أو سؤالك."
-    info_header_3: "سيبداء الطبيب بمحادثتك بأقرب وقت ممكن!"
-    info_text_3: "سيستجيب الطبيب لطلب بمحادثتك لتحديد موعد و/أو للإجابة على اسئلتك."
-
+    info_text_2: "ارسل طلب للطبيب مع ما تحتاج و/أو سؤالك"
+    info_header_3: "سيبداء الطبيب بمحادثتك بأقرب وقت ممكن"
+    info_text_3: "سيستجيب الطبيب لطلب بمحادثتك لتحديد موعد و/أو للإجابة على اسئلتك"
   footer:
     slogan_header: "الرعاية والمساهمة"
-    slogan_text: "We're the go-to platform for volunteer help"
+    slogan_text: "نحن متطوعين نقوم بخدمة تطوعية"
     copywright: "© 2016 DoctorFinder"
-
   buttons:
     pharmacies: "صيدليات"
     make_request: "أنشئ طلب"
@@ -45,24 +42,20 @@ ar:
     contact: "إتصل بنا"
     jobs: "أعمال"
     send: "أرسل"
-
   navbar:
     my_profile: "الملف الشخصي"
     edit_profile: "تعديل الملف الشخصي"
     logout: "تسجيل خروج"
     login: "تسجيل دخول"
-
   doctor_dashboard:
     pending_requests: "الطلبات المعلقة"
     table:
       doctor: "طبيب"
       message: "رسائلك"
-
     ongoing_chats: "جلسات الدردشة الجارية"
     with_doctor: "مع الطبيب "
     started: "بدأت"
     ago: "منذ"
-
   chat_session:
     doctor_info: "معلومات الطبيب"
     patient_info: "معلومات المريض"
@@ -74,5 +67,3 @@ ar:
     conversation: "محادثة: "
     ago: "منذago"
     msg_placeholder: "أكتب رسالتك هنا وأضغط على[enter]"
-
-
