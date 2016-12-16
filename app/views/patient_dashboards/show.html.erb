@@ -34,7 +34,7 @@
     <li class="collection-item avatar">
 
             <%= cl_image_tag(session.doctor.photo,:size => '50x50') %>
-      <span class="title"><u>with doctor: <%= session.doctor.first_name %></u></span>
+      <span class="title"><u>with Doctor <%= session.doctor.last_name %></u></span>
       <p>started <%= time_ago_in_words(session.created_at) %> ago<br>
       </p>
       <i class="material-icons">textsms</i>
