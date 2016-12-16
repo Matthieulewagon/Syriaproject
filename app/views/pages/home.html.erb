@@ -22,12 +22,12 @@
       </div>
       <div class="col s12 m6 center">
         <div class="panel panel-doctor">
-          <%= link_to t('buttons.am_doctor'), new_user_registration_path(role: "doctor"), class: "btn dark-red base btn-large" %>
+          <%= link_to t('buttons.am_doctor'), new_user_registration_path(role: "doctor"), class: "btn black base btn-large" %>
         </div>
       </div>
     <% elsif current_user && current_user.role == "doctor" %>
       <div class="col s12 m12 center">
-        <%= link_to t('buttons.my_requests'), doctor_dashboard_path(current_user), class: "btn dark-red base btn-large" %>
+        <%= link_to t('buttons.my_requests'), doctor_dashboard_path(current_user), class: "btn black base btn-large" %>
       </div>
     <% else %>
       <div class="col s12 m12 center">
